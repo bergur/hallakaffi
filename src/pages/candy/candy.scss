@@ -1,0 +1,31 @@
+candy {
+    ion-slide .slide-zoom {                
+        height: 95%;
+        
+    }
+    ion-card {                
+        height: 100%;                        
+        position: relative;
+    }
+
+    ion-card-content {
+        margin: auto;        
+        text-align: center;
+    }
+
+    ion-card-content img {
+        margin: auto;        
+    }
+
+    ion-card-header.card-header {
+        text-align: center;
+        font-size: 2em;  
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    ion-card button.button {        
+        position: absolute;
+        bottom: -3px;
+    }
+}

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Hallakaffi</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-slides>
+    <ion-slide *ngFor="let item of items | async">
+      <ion-card>
+        <ion-card-header> {{ item.name }}<br /><small>{{item.price }} kr.</small></ion-card-header>
+        <ion-card-content>
+          <img src="{{ item.photo }}" />
+        </ion-card-content>
+        <button ion-button block (click)="addToCart(item.$key)">Kaupa</button>
+      </ion-card>
+    </ion-slide>   
+  </ion-slides>
+
+</ion-content>

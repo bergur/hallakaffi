@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Hallakaffi</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>  
+  <ion-item>
+    <ion-label color="primary" stacked>TM netfang</ion-label>
+    <ion-input type="email" [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" stacked>Lykilorð</ion-label>
+    <ion-input type="password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+  
+  <button ion-button block (click)="login()">INNSKRÁ</button>  
+  <button ion-button color="secondary" block>NÝSKRÁ</button>  
+</ion-content>
