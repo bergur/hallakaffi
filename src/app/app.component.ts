@@ -11,7 +11,7 @@ import { LoginPage } from '../pages/login/login';
 })
 export class Hallakaffi {
   //rootPage:any = LoginPage;
-  rootPage:any = TabsPage;
+  rootPage: any = TabsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
