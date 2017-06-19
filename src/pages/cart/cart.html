@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title icon-left>
+      <ion-icon name="cafe"></ion-icon>
+      HALLAKAFFI
+    </ion-title>  
+  <ion-buttons end>
+    <button ion-button round icon-left click="goToCart()">
+      <ion-icon name="cart"></ion-icon> 
+      {{ cart.total }} kr.    
+    </button>
+  </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row *ngFor="let item of cart.getProducts(); let i = index">
+        <ion-col align-self-center><img src="{{ item.photo }}" /></ion-col>
+        <ion-col align-self-center>{{ item.name }}</ion-col>
+        <ion-col align-self-center>{{ item.price }}</ion-col>        
+        <ion-col align-self-center><button ion-button icon-left outline color="danger" (click)="remove(i)"><ion-icon name="trash"></ion-icon>Eyða</button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>Samtals:</ion-col>
+      <ion-col>{{ cart.total }}</ion-col>
+      <ion-col><button ion-button icon-left (click)="buy()"><ion-icon name="cart"></ion-icon>Kaupa</button></ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

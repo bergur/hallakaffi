@@ -1,8 +1,18 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Hallakaffi</ion-title>
+    <ion-title icon-left>
+      <ion-icon name="cafe"></ion-icon>
+      HALLAKAFFI
+    </ion-title>  
+  <ion-buttons end>
+    <button ion-button round icon-left (click)="goToCart()">
+      <ion-icon name="cart"></ion-icon> 
+      {{ cart.total }} kr.    
+    </button>
+  </ion-buttons>
   </ion-navbar>
 </ion-header>
+
 
 <ion-content padding>
 
@@ -13,7 +23,7 @@
         <ion-card-content>
           <img src="{{ item.photo }}" />
         </ion-card-content>
-        <button ion-button block (click)="addToCart(item.$key)">Kaupa</button>
+        <button ion-button block (click)="addToCart(item)">Kaupa</button>
       </ion-card>
     </ion-slide>   
   </ion-slides>

@@ -10,8 +10,8 @@ import { LoginPage } from '../pages/login/login';
   templateUrl: 'app.html'
 })
 export class Hallakaffi {
-  //rootPage:any = LoginPage;
-  rootPage: any = TabsPage;
+  rootPage:any = LoginPage;
+  //rootPage: any = TabsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -21,4 +21,5 @@ export class Hallakaffi {
       splashScreen.hide();
     });
   }
+  
 }

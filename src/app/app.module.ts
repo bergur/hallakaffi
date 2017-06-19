@@ -7,6 +7,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Hallakaffi } from './app.component';
 import { LoginPage } from '../pages/login/login';
 import { CandyPage } from '../pages/candy/candy';
+import { CartPage } from '../pages/cart/cart';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { AngularFireModule } from 'angularfire2'
@@ -18,13 +19,13 @@ import { CartService } from '../providers/cart-service';
 
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 
-export const firebaseConfig = {  
-    apiKey: "AIzaSyDHGJT4If7Fw8NmfqDQWfQdv_dN8z50nP0",
-    authDomain: "hallakaffi-2d2fb.firebaseapp.com",
-    databaseURL: "https://hallakaffi-2d2fb.firebaseio.com",
-    projectId: "hallakaffi-2d2fb",
-    storageBucket: "hallakaffi-2d2fb.appspot.com",
-    messagingSenderId: "440383505953"
+export const firebaseConfig = {
+  apiKey: "AIzaSyDHGJT4If7Fw8NmfqDQWfQdv_dN8z50nP0",
+  authDomain: "hallakaffi-2d2fb.firebaseapp.com",
+  databaseURL: "https://hallakaffi-2d2fb.firebaseio.com",
+  projectId: "hallakaffi-2d2fb",
+  storageBucket: "hallakaffi-2d2fb.appspot.com",
+  messagingSenderId: "440383505953"
 };
 
 const cloudSettings: CloudSettings = {
@@ -35,8 +36,9 @@ const cloudSettings: CloudSettings = {
 
 @NgModule({
   declarations: [
-    Hallakaffi,    
+    Hallakaffi,
     CandyPage,
+    CartPage,
     LoginPage,
     TabsPage
   ],
@@ -51,16 +53,17 @@ const cloudSettings: CloudSettings = {
   entryComponents: [
     Hallakaffi,
     LoginPage,
-    CandyPage,    
+    CandyPage,
+    CartPage,
     TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     AngularFireAuth,
     AuthService,
     CartService
   ]
 })
-export class AppModule {}
+export class AppModule { }
