@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title icon-left>
+      <ion-icon name="cafe"></ion-icon>
+      HALLAKAFFI
+    </ion-title>  
+  <ion-buttons end>
+    <button ion-button round icon-left click="goToCart()">
+      <ion-icon name="cart"></ion-icon> 
+      {{ cart.total }} kr.    
+    </button>
+  </ion-buttons>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+  <ion-segment [(ngModel)]="historyType">
+    <ion-segment-button value="unpaid">Skuld</ion-segment-button>
+    <ion-segment-button value="paid">Greitt</ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+</ion-header>
+
+
+<ion-content>  
+  <div [ngSwitch]="historyType">
+    <ion-item-group *ngSwitchCase="'unpaid'">
+      <div *ngFor="let history of unpaidItems | async">
+        <ion-item-divider color="light">{{ history.date}}</ion-item-divider>      
+        <ion-item *ngFor="let item of history.items">
+          <ion-thumbnail item-start><img src="{{ (item.candy | async)?.photo }}" /></ion-thumbnail>
+          <h2>{{ (item.candy | async)?.name }}</h2>        
+        </ion-item>
+      </div>
+    </ion-item-group>
+  
+    <ion-item-group *ngSwitchCase="'paid'">
+      <div *ngFor="let history of paidItems | async">
+        <ion-item-divider color="light">{{ history.date}}</ion-item-divider>      
+        <ion-item *ngFor="let item of history.items">
+          <ion-thumbnail item-start><img src="{{ (item.candy | async)?.photo }}" /></ion-thumbnail>
+          <h2>{{ (item.candy | async)?.name }}</h2>        
+        </ion-item>
+      </div>
+    </ion-item-group>
+  </div>
+
+</ion-content>

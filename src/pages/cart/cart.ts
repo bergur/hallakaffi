@@ -42,7 +42,8 @@ export class CartPage {
             let item: SoldItem = {
               candyId: curr.$key,
               date: new Date().getTime(),
-              userId: this.auth.currentUser.uid
+              userId: this.auth.currentUser.uid,
+              paid: false
             };
 
             return prev.then(() => this.sell.push(item)).then(() => {
@@ -89,4 +90,5 @@ export interface SoldItem {
   candyId: string
   date: Number,
   userId: string
+  paid: boolean
 }
